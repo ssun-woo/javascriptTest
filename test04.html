@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+/* 세 수를 입력받아 큰 수를 출력하시오 */
+const num5 = prompt("첫번째 수 입력 : ");
+const num6 = prompt("두번째 수 입력 : ");
+const num7 = prompt("세번째 수 입력 : ");
+
+if(num5>=num6 && num5>=num7){
+	big = num5;	
+}else if(num6>=num5 && num6>=num7){
+	big = num6;
+}else if(num7>=num5 && num7>=num6){
+	big = num7;
+}
+
+document.write("가장 큰수 : " + big);
+
+</script>
+
+</body>
+</html>

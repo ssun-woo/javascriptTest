@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	/* 정수를 입력받아 아래와 같이 출력하시오 */
+	const num = prompt("수 입력 : ");
+	let msg = "";
+	if (num == 0){
+		msg = "잘못 입력";
+	}else if(num%3==0 && num % 4==0){
+		msg = "3의 배수이면서, 4의 배수에도 해당";
+	}else if(num%3 == 0 && num % 4 != 0){
+		msg = "3의 배수에만 해당";
+	}else if(num%3 != 0 && num % 4 == 0){
+		msg = "4의 배수에만 해당";
+	}else if(num%3 != 0 && num % 4 != 0){
+		msg = "3의 배수도, 4의 배수도 해당안됨";
+	}
+	
+	document.write(msg);
+
+</script>
+
+</body>
+</html>

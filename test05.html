@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	/* 두 수를 입력받아 큰 수가 짝수이면 출력하시오 */
+	const num8 = prompt("첫번째 수 입력 : ");
+	const num9 = prompt("두번째 수 입력 : ");
+	let bigger;
+	bigger = (Number(num8)>Number(num9))? Number(num8) : Number(num9);
+	
+	if(bigger % 2 == 0){
+		document.write(bigger);
+	}else{
+		document.write("큰수가 짝수가 아닙니다");
+	}
+
+</script>
+
+</body>
+</html>

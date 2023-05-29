@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	/* 비행기를 타는데 30분 거리까지의 기본 요금은 30000원이며, 10분 단위로 추가요금 5000원씩 부가된다. 비행기 탈 시간을 입력하여 요금 계산기를 만드시오 */
+	
+	const min = prompt("비행시간 입력(분 단위): ");
+	let total = 0;
+	let msg = "";
+	
+	if (min < 0){
+		msg = "잘못된 입력입니다";
+	}else if(min<=30){
+		total = 30000;
+	}else{
+		total = 30000 + parseInt((Number(min)-30)/10 + 1)*5000
+	}
+	
+	document.write(`${min}분 비행시간의 총 가격은 ${total}원 입니다.`)
+
+
+
+</script>
+
+</body>
+</html>

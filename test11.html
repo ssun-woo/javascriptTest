@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	/* 
+	usb 1개에 5000원한다. 그런데 한번에 10개 이상을 사면 전체 금액의 10%를 할인하여 준다. 
+	그리고 100개 이상을 사면 전체 금액의 12%를 할인하여 준다. X개의 usb르 사려면 얼마가 있어야 하는가 ? 
+	*/
+	
+	const count = prompt("usb 갯수 입력 : ");
+	
+	if(count<0){
+		document.write("잘못된 입력입니다");
+	}else if(count >= 100){
+		document.write(`총 가격은 ${count*5000*0.88}원 입니다`);
+	}else if(count >= 10){
+		document.write(`총 가격은 ${count*5000*0.9}원 입니다`);
+	}else if(count < 10){
+		document.write(`총 가격은 ${count*5000}원 입니다.`)
+	}
+	
+</script>
+
+</body>
+</html>

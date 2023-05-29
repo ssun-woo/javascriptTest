@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	/* 
+	국,영,수 점수를 입력 받아 평균이 60점 이상이고 각 점수가 40점 이상이면 합격, 아니면 평균 불합격인지, 과목 불합격인지 사유를 출력하고,
+	평균이 90이상이면 'A', 80이상이면 'B', 70이상 'C', 60이상 'D', 60 미만이면 'F'를 출력하시오
+	(출력 : 불합력 또는 합격, 국, 영, 수, 합계, 평균 , 등급)
+	- 소수점수 자리 자름(반올림) : avg=1.12345 -> avg.toFixed(2) -> 1.12
+	*/
+	
+	const kor = prompt("국어 점수 입력 : ");
+	const eng = prompt("영어 점수 입력 : ");
+	const math = prompt("수학 점수 입력 : ");
+	let sum = (Number(kor) + Number(eng) + Number(math))
+	let avg = Number(sum) / 3;
+	avg = avg.toFixed(2);
+	let msg = "";
+	let grade = "F";
+	
+	if(avg >= 60 && ( kor < 40 || eng < 40 || math < 40)){
+		msg = "과목 불합격";
+	}else if(avg < 60){
+		msg = "평균 불합격";
+	}else {
+		msg = "합격";
+		if(avg >= 90){
+			grade = "A";
+		}else if(avg >= 80){
+			grade = "B";
+		}else if(avg >= 70){
+			grade = "C";
+		}else if (avg >= 60){
+			grade = "D"
+		}
+	}
+	
+	document.write(`${msg}<br>
+	국어 : ${kor}<br>
+	영어 : ${eng}<br>
+	수학 : ${math}<br>
+	합계 : ${sum}<br>
+	평균 : ${avg}<br>
+	등급 : ${grade}`);
+	
+	
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
