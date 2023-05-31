@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	
+	* {
+		margin : 0px;	
+	}
+	
+	img {
+		height: 100px;
+		width: 100px;
+	}
+	
+	.img {
+		border : 1px solid black;
+		height: 100px;
+		width: 100px;
+		position : relative;
+	}
+	
+	.div02 {
+		display : flex;
+	}
+	
+	span {
+		position : absolute;
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+		text-align: center;
+		top: 25px;
+		left: 25px;
+	}
+	
+	
+	
+	
+	
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+	const images = ["images/test1.jpg", "images/test2.jpg", "images/test3.jpg",
+					"images/test4.jpg", "images/test5.jpg", "images/test6.jpg",
+					"images/test7.jpg", "images/test8.jpg"]
+
+	window.onload = () => {
+		let msg = `<div class="div02">`;
+		
+		for(let i=0; i<images.length; i++){
+			msg += `<div class="img" id="${i}" onmouseover="imgOver(${i})" onmouseout="imgOut(${i})">`;
+			msg += `<img src=${images[i]}>`;
+			msg += `</div>`;
+			
+			if(i+1 == Number(images.length/2)){
+				msg += `</div><div class="div02">`;
+			}
+		}
+		
+		const div = document.getElementById("div");
+		div.innerHTML = msg;
+	}	
+	
+	const imgOver = (index) => {
+		const span = document.getElementById(index);
+		span.innerHTML = `<span>선택</span>`
+	}
+	
+	const imgOut = (index) => {
+		const div02 = document.getElementById(index);
+		div02.innerHTML = `<img src=${images[index]}>`;
+	}
+	
+
+</script>
+
+<div id="div">
+
+</div>
+
+</body>
+</html>
