@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+	/* 입력 받은 값이 짝수인지 홀수인지 판별하는 함수 제작 */
+	
+	const input = () => prompt("수 입력 : ");
+	const checkOdd = (n) => (n%2==0)? "짝수" : "홀수";
+	const print = (n, msg) => document.write(n + "은(는) " + msg + "입니다");
+	
+	let num = input();
+	let msg = checkOdd(num);
+	print(num, msg);
+	
+</script>
+
+</body>
+</html>

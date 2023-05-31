@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/* 수를 입력 받아 소수를 판별하는 함수 제작 */
+	
+	const input = () => prompt("수 입력 : ");
+	const checkPrime = (n) => {
+		let msg;
+		for(let i=2; i<n; i++){
+			if (n%i == 0){
+				msg = n + "은(는) 소수가 아닙니다";
+				break;
+			}else{
+				msg = n + "은(는) 소수입니다";
+			}
+		}
+		return msg;
+	}
+
+	const print = (m) => document.write(m);
+	
+	let num = input();
+	let msg = checkPrime(num);
+	print(msg);
+
+
+
+</script>
+
+
+</body>
+</html>

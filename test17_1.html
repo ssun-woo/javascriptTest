@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/* 두 수를 입력 받아 큰 수를 출력하는 함수를 만드시오 */
+	
+	function inputNum(){
+		const num1 = prompt("첫번째 수 입력 : ");
+		const num2 = prompt("두번째 수 입력 : ");
+		return [num1, num2];
+	}
+	
+	function big(num1, num2){
+		if(Number(num1) >= Number(num2)){
+			return num1;
+		}else{
+			return num2;
+		}
+	}
+	
+	function print(num){
+		document.write(`둘 중 더 큰수는 ${num}입니다`);
+	}
+	
+	let result = inputNum();
+	result = big(result[0], result[1]);
+	print(result);
+
+
+</script>
+
+
+</body>
+</html>

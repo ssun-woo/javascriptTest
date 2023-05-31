@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/* 절대값을 구하는 함수를 정의하시오 */
+	
+	function inputNum(){
+		const num = prompt("수 입력 : ");
+		return num;
+	}
+	
+	function absoluteValue(num){
+		if(num < 0){
+			num = num * -1;
+		}
+		return num;
+	}
+	
+	function print(num1, num2){
+		document.write(`${num1}의 절대값 : ${num2}`);
+	}
+	
+	let num1 = inputNum();
+	let num2 = absoluteValue(num1);
+	
+	print(num1, num2);
+
+
+
+</script>
+
+</body>
+</html>

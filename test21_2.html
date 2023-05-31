@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/* 절대값을 구하는 함수를 정의하시오 */
+	
+	const input = () => prompt("수 입력 : ");
+	const absolute =  (n) => (n>0)? n : n*-1;
+	const print = (n,m) => document.write(`${n}의 절대값 : ${m}`);
+	
+	let num = input();
+	let aNum = absolute(num);
+	
+	print(num, aNum);
+
+</script>
+
+</body>
+</html>

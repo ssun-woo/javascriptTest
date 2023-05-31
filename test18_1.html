@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/*입력 받은 값이 짝수인지 홀수인지 판별하는 함수 제작*/
+	
+	function inputNum(){
+		const num = prompt("수 입력 : ");
+		return num;
+	}
+	
+	function odd(num){
+		let msg;
+		if(num%2==0){
+			msg = num + "는(은) 짝수입니다";
+		}else{
+			msg = num + "는(은) 홀수입니다";
+		}
+		return msg;
+	}
+	
+	function print(msg){
+		document.write(msg);
+	}
+	
+	print(odd(inputNum()));
+
+</script>
+
+</body>
+</html>

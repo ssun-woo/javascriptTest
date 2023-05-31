@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/* 3의 배수를 판별하는 함수 제작 */
+	
+	const input = () => prompt("수 입력 : ");
+	const three = (n) => (n%3 == 0)? "3의 배수 O" : "3의 배수 X"
+	const print = (m, msg) => document.write(`${m}은(는) ${msg}`);
+	
+	let num = input();
+	let msg = three(num);
+	
+	print(num, msg);
+
+</script>
+
+</body>
+</html>

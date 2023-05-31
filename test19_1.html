@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	/* 3의 배수를 판별하는 함수 제작 */
+	
+	function inputNum(){
+		const num = prompt("수 입력 : ");
+		return num;
+	}
+	
+	function three(num){
+		let msg;
+		if(num % 3 == 0){
+			msg = num + "은 3의 배수입니다";
+		}else{
+			msg = num + "은 3의 배수가 아닙니다";
+		}
+		return msg;
+	}
+	
+	function print(msg){
+		document.write(msg);
+	}
+	
+	print(three(inputNum()));
+
+
+</script>
+
+</body>
+</html>
