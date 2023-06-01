@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+<style type="text/css">
+</style>
+	
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var userInfo = [
+		{ id : "aaa", name : "홍길동", age : 20},
+		{ "id" : "bbb", "name" : "김개똥", "age" : 30},
+		{ id : "ccc", name : "고길동", age : 40}
+	]
+	
+	const listMember = () =>{
+		let msg = `<table border="1">`;
+		msg += `<tr><th>아이디</th><th>이름</th><th>나이</th></tr>`;
+		for(let i=0; i<userInfo.length; i++){
+			msg += `<tr><td>${userInfo[i].id}</td><td onclick="info('${userInfo[i].name}')">${userInfo[i].name}</td><td>${userInfo[i].age}</td></tr>`
+			if(i+1 == userInfo.length){
+				msg += `</table>`
+			}
+		}
+		const table = document.getElementById("table");
+		table.innerHTML = msg;
+	}
+	
+	const searchMember = () => {
+		const getId = document.getElementById("searchId").value;
+		
+		let msg = `<table border="1">`;
+		msg += `<tr><th>아이디</th><th>이름</th><th>나이</th></tr>`;
+		for(let i=0; i<userInfo.length; i++) {
+			if(userInfo[i].id == getId){
+				msg += `<tr><td>${userInfo[i].id}</td><td onclick = "info('${userInfo[i].name}')">${userInfo[i].name}</td><td>${userInfo[i].age}</td></tr>`;
+			}
+			if(i+1 == userInfo.length){
+				msg += `</table>`
+			}
+		}
+		// 아무 정보도 존재하지 않는다면 정보가 존재하지 않습니다 출력 가능?
+		const table = document.getElementById("table");
+		table.innerHTML = msg;
+	}
+	
+	
+	const deleteMember = () =>{
+		const getId = document.getElementById("deleteId").value;
+		
+		userInfo = userInfo.filter( (value, index) => {
+			if(value.id !== getId){
+				return userInfo[index];
+			}
+		});
+		listMember();
+	}
+	
+	const info = (name) => {
+		let msg = "";
+		for(let i=0; i< userInfo.length; i++){
+			if(userInfo[i].name == name){
+				msg += `아이디 : ${userInfo[i].id}<br>
+						이름 : ${userInfo[i].name}<br>
+						나이 : ${userInfo[i].age}`;
+			}
+		}
+		const table = document.getElementById("table");
+		table.innerHTML = msg;
+	}
+
+</script>
+
+	<div id="table">
+		<h4 id="h4">목록을 보여줍니다</h4>
+		<hr>
+	</div>
+	
+	<input type="button" value="모든 회원 보기" onclick = "listMember()">
+	<hr>
+	
+	<input type="text" id="searchId" placeholder="input id"><br>
+	<input type="button" value="특정 회원 조회" onclick = "searchMember()"><hr>
+	
+	<input type="text" id="deleteId" placeholder="input id"><br>
+	<input type="button" value="특정 회원 삭제" onclick = "deleteMember()"><hr>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
