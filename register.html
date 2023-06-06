@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	const pwdCheck = (t) => {
+		const pwd1 = document.getElementById("pwd1");
+		const label = document.getElementById("label");
+		if(pwd1.value != t.value){
+			label.innerHTML="불일치!";
+		}else{
+			label.innerHTML="일치!";
+		}
+	}
+	
+	const check = () =>{
+		const fo = document.getElementById("fo");
+		if(fo.id1.value == ""){
+			alert("아이디는 필수 사항입니다");
+			fo.id1.focus();
+		}else if(fo.pwd1.value == ""){
+			alert("비밀번호는 필수 사항입니다");
+			fo.pwd1.focus();
+		}else if(fo.pwd2.value == ""){
+			alert("비밀번호 확인은 필수 사항입니다");
+			fo.pwd2.focus();
+		}else{
+			if(fo.pwd1.value == fo.pwd2.value && fo.pwd1.value != ""){
+				fo.submit();
+			}else{
+				fo.pwd1.value = "";
+				fo.pwd2.value = "";
+				fo.pwd1.focus();
+			}
+		}
+	}
+	
+</script>
+
+<form id="fo" action="success.html">
+	<input type="text" id="id1" placeholder="아이디 입력"><span style="color: red;">(*필수항목)</span><br>
+	<input type="text" id="pwd1" placeholder="비밀번호 입력"><span style="color: red;">(*필수항목)</span><br>
+	<input type="text" id="pwd2" onchange="pwdCheck(this)" placeholder="비밀번호 확인">
+	<label id="label"></label><br>	
+	<hr>
+	<button type="button" onclick="check()">등록</button>
+	<hr>
+	
+</form>
+
+</body>
+</html>

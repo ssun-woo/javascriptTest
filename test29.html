@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	#div01 {
+		width : 100px;
+		height : 100px;
+		position: relative;
+		left : 100px;
+		top : 100px;
+	}
+	
+	
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+	let div01;
+	window.onload = () => {
+	 	div01 = document.getElementById("div01"); 
+	}
+	
+	const button1 = () => {
+		div01.style.background = "yellow";
+		div01.innerHTML = `<h3 id="h3">버튼 1 클릭</h3>`;
+	}
+	const button2 = () => {
+		div01.style.background = "green";
+		div01.innerHTML = `<h3 id="h3">버튼 2 클릭</h3>`;
+	}
+	const button3 = () => {
+		div01.style.background = "pink";
+		div01.innerHTML = `<h3 id="h3">버튼 3 클릭</h3>`;
+	}
+	
+	var e;
+	const button4 = auto = () =>{
+		div		
+	}
+	
+	const button5 = () => {
+		div01.style.background = "white";
+		div01.innerHTML = "";
+	}
+	
+	const end = () => {
+		clearTimeout(e);
+	}
+
+
+</script>
+
+
+<button type="button" id="1" onclick="end(), button1()">버튼 1</button>
+<button type="button" id="2" onclick="end(), button2()">버튼 2</button>
+<button type="button" id="3" onclick="end(), button3()">버튼 3</button>
+<button type="button" id="4" onclick="button4()">자동</button>
+<button type="button" id="5" onclick="end(), button5()">지우기</button>
+
+
+<div id="div01">
+
+</div>
+
+</body>
+</html>

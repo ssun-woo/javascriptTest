@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	
+	img {
+		width: 100px;
+		height: 100px;
+	}
+	
+	.img {
+		width:100px;
+		height: 100px;
+		border: 1px solid black;
+		position: relative;
+	}
+	
+	
+	.div02 {
+		display : flex;
+	}
+	
+	.cart {
+		top : 30px;
+		right : 50px;
+		height : 550px;
+		position: fixed;
+	}
+	
+	.cartTop{
+		width : 100px;
+		height: 50px;
+		text-align: center;
+	}
+	
+	#carts {
+		display: flex;
+	}
+	
+	
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+	const images = ["images/최근상품01.jpg", "images/최근상품02.jpg", "images/최근상품03.jpg",
+					"images/최근상품04.jpg", "images/최근상품05.jpg", "images/최근상품06.jpg",
+					"images/최근상품07.jpg", "images/최근상품08.jpg"];
+	
+	var cartList = [];
+	
+	
+	window.onload = () => {
+		
+		let msg = `<div class="div02">`;
+		for(let i=0; i<images.length; i++){
+			msg += `<div class="img" id=${i}>`;
+			msg += `<img src="${images[i]}" onclick="addCart(${i})">`;
+			msg += `</div>`
+			if(i+1 == Number(images.length/2)) {
+				msg += `</div><div class="div02">`;
+			}
+		}
+		const div01 = document.querySelector(".div01");
+		div01.innerHTML = msg;
+		
+		const cart = document.querySelector(".cart");
+		const cartTop = document.querySelector(".cartTop");
+		
+		if(cart.childElementCount == 1){
+			cartTop.style.background = "red";
+			cartTop.innerHTML = `<h3>목록이<br>없습니다</h3>`	
+		}
+		
+	}
+	
+	const addCart = (i) => {
+		img = document.createElement("img");
+		img.src = `${images[i]}`;
+		img.id = `carts`;
+		img.width = 100;
+		img.style.height = "100px";
+		document.querySelector(".cart").appendChild(img);
+		const cart = document.querySelector(".cart");
+		
+		const cartTop = document.querySelector(".cartTop");
+		
+		if(cart.childElementCount > 1){
+			cartTop.style.background = "green";
+			cartTop.innerHTML = `<h3>최근 구경<br>한 상품</h3>`
+		}
+		
+		if(document.querySelector(".cart").childElementCount == 7){
+			let items = document.querySelector(".cart");
+			items.removeChild(items.childNodes[3]);
+		}
+		
+	}
+	
+
+</script>
+
+
+<div class="div01">
+	
+</div>
+
+<div class="cart">
+	<div class="cartTop"></div>
+</div>
+
+</body>
+</html>
